@@ -9,8 +9,12 @@ Firefighter simulates the graph game Firefighter, introduced by Bert Hartnell in
 4. Every vertex adjacent to the burning vertices catches fire, unless it is protected. `time += 1`.
 5. The game ends when every vertex is either burning or protected.
 
-## Possible Objectives
+### Possible Objectives
 
 1. Minimize the time taken to end the game.
 2. Maximize the number of safe vertices.
 3. Some kind of points system, ie. `points = burning_vertices + time`. Minimize `points`.
+
+## What's the goal?
+
+Temporarily, to simulate firefighter hundreds of times on different graphs, and model how a randomized approach to firefighter works.
