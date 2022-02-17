@@ -34,6 +34,3 @@ def sim_rand():
 sims = [sim_rand() for i in range(1000)]
 
 pyplot.hist(sims, bins=range(6), normed=True)
-pyplot.xlabel('Number of Turns to win')
-pyplot.ylabel('Fraction of games')
-pyplot.title('Simulated Lengths of Chutes & Ladders Games')
