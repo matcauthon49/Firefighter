@@ -4,7 +4,7 @@ import pandas as pd
 def random_tree_generator(v):
 
     adjacency_list = {
-        i:[] for i in range(1,v+3)
+        i:[] for i in range(1,v+3) # tree will have v+2 nodes
     }
     prufer = [
         random.randint(1, v+1) for i in range(1, v+1)
