@@ -1,4 +1,4 @@
-class graph:
+class fgraph:
 
     def __init__(self, adjacency_dict):
         self.length = len(adjacency_dict)
