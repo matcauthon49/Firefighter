@@ -9,9 +9,11 @@ class fgraph:
         self.currently_burning = {1}
         self.protected = set()
 
+    # Protects a vertex
     def protect(self,i):
         self.protected.add(i)
 
+    # Spreads fire one step
     def burn(self):
         new_burning = set()
         
@@ -25,6 +27,7 @@ class fgraph:
 
         self.currently_burning = new_burning
 
+    # Randomly selects an unprotected vertex and protects it
     def protect_random_vertex(self):
         unprotected = ({i for i in range(1, self.length+1)} - self.on_fire)-self.protected
         vertex_to_protect = random.choice(list(unprotected))
