@@ -1,3 +1,5 @@
+import random
+
 class fgraph:
 
     def __init__(self, adjacency_dict):
@@ -22,6 +24,12 @@ class fgraph:
                     self.on_fire.add(i)
 
         self.currently_burning = new_burning
+
+    def protect_random_vertex(self):
+        unprotected = ({i for i in range(1, self.length+1)} - self.on_fire)-self.protected
+        vertex_to_protect = random.choice(list(unprotected))
+
+        self.protect(vertex_to_protect)
 
     def return_protected(self):
         return self.protected
