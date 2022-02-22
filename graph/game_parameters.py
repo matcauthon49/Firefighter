@@ -42,7 +42,6 @@ class fgraph:
         return self.on_fire
     
     def reset(self):
-        self.length = len(self.adjacency_list)
         self.on_fire = {1}
         self.currently_burning = {1}
         self.protected = set()
