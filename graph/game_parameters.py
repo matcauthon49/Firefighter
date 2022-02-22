@@ -30,15 +30,24 @@ class fgraph:
 
     def protect_random_vertex(self):
         unprotected = ({i for i in range(1, self.length+1)} - self.on_fire)-self.protected
-
-        vertex_to_protect = random.choice(list(unprotected))
-        self.protect(vertex_to_protect)
+        
+        if (unprotected != set()):
+            vertex_to_protect = random.choice(list(unprotected))
+            self.protect(vertex_to_protect)
 
     def return_protected(self):
         return self.protected
 
     def return_on_fire(self):
         return self.on_fire
+    
+    def reset(self):
+        self.length = len(self.adjacency_list)
+        self.on_fire = {1}
+        self.currently_burning = {1}
+        self.protected = set()
+        self.playable = self.length - 1
+
 
 def play_firefighter(game_fgraph):
 
@@ -46,9 +55,4 @@ def play_firefighter(game_fgraph):
         game_fgraph.protect_random_vertex()
         game_fgraph.burn()
 
-    return (
-      game_fgraph.protected, 
-      game_fgraph.on_fire, 
-      len(game_fgraph.protected),
-      len(game_fgraph.on_fire)
-    )
+    return (game_fgraph.protected, game_fgraph.on_fire, len(game_fgraph.protected), len(game_fgraph.on_fire))
