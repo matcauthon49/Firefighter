@@ -54,4 +54,9 @@ def play_firefighter(game_fgraph):
         game_fgraph.protect_random_vertex()
         game_fgraph.burn()
 
-    return (game_fgraph.protected, game_fgraph.on_fire, len(game_fgraph.protected), len(game_fgraph.on_fire))
+    return (
+        game_fgraph.protected, 
+        game_fgraph.on_fire, 
+        len(game_fgraph.protected), 
+        len(game_fgraph.on_fire)
+    )
